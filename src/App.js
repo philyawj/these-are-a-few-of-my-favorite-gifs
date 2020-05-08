@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import data from './gifs.json'
 
 function App() {
+  // console.log(data);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {data.gifs.map((block, index) =>
+        <div key={index}>
+          <h1>Gif Name: {block.name}</h1>
+          <img alt={block.alt} src={'/assets/gifs/' + block.name + '.gif'} />
+          {/* {console.log(block.tags)} */}
+          <h2>
+            {block.tags.map(tag => ' #' + tag)}
+          </h2>
+
+
+        </div>
+      )}
     </div>
   );
 }

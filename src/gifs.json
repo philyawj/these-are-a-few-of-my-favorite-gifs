@@ -1,0 +1,28 @@
+{
+    "gifs": [
+        {
+            "name": "corgi-piano",
+            "tags": [
+                "corgi",
+                "piano"
+            ],
+            "alt": "corgi playing a piano"
+        },
+        {
+            "name": "crushing-it",
+            "tags": [
+                "crush",
+                "crushing"
+            ],
+            "alt": "saying crushing it with attitude"
+        },
+        {
+            "name": "dancing-girl",
+            "tags": [
+                "dance",
+                "dancing"
+            ],
+            "alt": "girl getting down dancing at a party"
+        }
+    ]
+}
