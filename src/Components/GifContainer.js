@@ -8,10 +8,6 @@ import GifBadges from './GifBadges';
 
 class GifContainer extends React.Component {
 
-    // #TODO REMOVE TODOS AND CREATE NEW ONES
-    // CLEAN UP CODE AND OPTIMIZE
-    // LEAVE CLEAR CODE COMMENTS
-
     state = {
         inputValue: '',
         gifs: [],
@@ -41,10 +37,12 @@ class GifContainer extends React.Component {
         // set state on load to full list of gifs
         this.setState({ gifs: data.gifs });
 
+        // load badges of top tags at top below search bar
         this.topArrayTags();
     }
 
     gifFilterOnChange = (event) => {
+        // as search bar text input changes, change state of what gifs are filtered and shown
         this.setState({ inputValue: event.target.value });
     };
 
@@ -61,8 +59,6 @@ class GifContainer extends React.Component {
         // substr removes front # and ending space
         this.setState({ inputValue: str.substr(1, str.length - 1) });
     };
-
-
 
     topArrayTags() {
         // get all tags into one array
