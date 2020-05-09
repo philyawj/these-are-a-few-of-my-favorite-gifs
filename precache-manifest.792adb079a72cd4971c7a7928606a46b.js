@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bb72ef2862051d899b04beda04e8982e",
+    "revision": "8c0e75e0416f6ac42ee333a0798cb1dd",
     "url": "/these-are-a-few-of-my-favorite-gifs/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/these-are-a-few-of-my-favorite-gifs/static/css/2.de424728.chunk.css"
   },
   {
-    "revision": "7d077894b8dc2f92cc2e",
-    "url": "/these-are-a-few-of-my-favorite-gifs/static/css/main.56e649f3.chunk.css"
+    "revision": "ef49ac7b06da6681b337",
+    "url": "/these-are-a-few-of-my-favorite-gifs/static/css/main.5ab7dc46.chunk.css"
   },
   {
     "revision": "1da03f3ee5d5a8656e4b",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/these-are-a-few-of-my-favorite-gifs/static/js/2.96c8022a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7d077894b8dc2f92cc2e",
+    "revision": "ef49ac7b06da6681b337",
     "url": "/these-are-a-few-of-my-favorite-gifs/static/js/main.43d37ac8.chunk.js"
   },
   {
