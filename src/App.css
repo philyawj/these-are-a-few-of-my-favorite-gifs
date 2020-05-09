@@ -1,13 +1,11 @@
-.App {
-  /* width: 1200px; */
-  background-color: pink;
-  margin: 0 auto;
+.container {
+  margin: 2rem 0 0 0;
 }
 
 .search-bar {
   /* max-width: 200px; */
-  margin: 1rem 2rem;
-  background-color: yellow;
+  /* margin: 1rem 2rem; */
+  /* background-color: yellow; */
 }
 
 .gif-tag:hover {
@@ -21,6 +19,7 @@
 
 .badge {
   margin-right: .5rem;
+  font-size: 100% !important;
 }
 
 .gif-tag {

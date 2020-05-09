@@ -3,20 +3,33 @@ import '../App.css';
 import data from '../gifs.json'
 import CardColumns from 'react-bootstrap/CardColumns';
 import Form from 'react-bootstrap/Form';
-import Badge from 'react-bootstrap/Badge';
 import GifCard from './GifCard';
+import GifBadges from './GifBadges';
 
 class GifContainer extends React.Component {
 
+    // #TODO sort in random order on load
+    // #TODO add more columns
     state = {
         inputValue: '',
         gifs: [],
         topTags: []
     };
 
+    shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        return array;
+    }
+
     componentDidMount() {
+
         // join the tags array into comma seperated tag string to filter with toLowerCase() for filteredGifs
-        data.gifs.forEach(gif => {
+        this.shuffleArray(data.gifs).forEach(gif => {
             gif.tagString = gif.tags.join();
         });
 
@@ -37,7 +50,7 @@ class GifContainer extends React.Component {
         this.setState({ inputValue: str.substr(1, str.length - 1) })
     };
 
-    handlePillClick = (event) => {
+    handleBadgeClick = (event) => {
         // clicking tag under gif sets search bar
         let str = event.target.textContent;
         // substr removes front # and ending space
@@ -71,22 +84,14 @@ class GifContainer extends React.Component {
         });
 
         return (
-            <div>
+            <div className="container">
                 <Form className="search-bar" onSubmit={this.formPreventDefault}>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Search for gif tags</Form.Label>
-                        <Form.Control type="text" value={this.state.inputValue} onChange={this.gifFilterOnChange} />
+                        <Form.Control placeholder="Search" size="lg" type="text" value={this.state.inputValue} onChange={this.gifFilterOnChange} />
                     </Form.Group>
                 </Form>
 
-                <div>
-                    <h4>The top tags go here</h4>
-                    {this.state.topTags.map((tag, index) =>
-                        <Badge key={index} variant="primary" onClick={(e) => this.handlePillClick(e)}>
-                            #{tag}
-                        </Badge>
-                    )}
-                </div>
+                <GifBadges tags={this.state.topTags} handleBadgeClick={this.handleBadgeClick} />
 
                 <CardColumns>
                     {filteredGifs.map((gif, index) =>
