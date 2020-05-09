@@ -14,6 +14,12 @@ class GifContainer extends React.Component {
     };
 
     componentDidMount() {
+        // join the tags array into comma seperated tag string to filter with toLowerCase() for filteredGifs
+        data.gifs.forEach(gif => {
+            gif.tagString = gif.tags.join();
+        });
+
+        // set state on load to full list of gifs
         this.setState({ gifs: data.gifs });
     }
 
@@ -23,9 +29,10 @@ class GifContainer extends React.Component {
 
     render() {
         const filteredGifs = this.state.gifs.filter(gif => {
-            return gif.name.toLowerCase().includes(this.state.inputValue.toLowerCase());
+            console.log(gif.tags);
+            return gif.tagString.toLowerCase().includes(this.state.inputValue.toLowerCase());
         });
-        console.log(filteredGifs);
+        // console.log(filteredGifs);
 
         return (
             <div>
