@@ -14,3 +14,11 @@
   cursor: pointer;
   color: blueviolet;
 }
+
+.badge:hover {
+  cursor: pointer;
+}
+
+.badge {
+  margin-right: .5rem;
+}
