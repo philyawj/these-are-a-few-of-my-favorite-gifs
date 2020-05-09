@@ -11,7 +11,7 @@ class GifCard extends React.Component {
                     <Card.Title>{this.props.gif.name}</Card.Title>
                     <Card.Text>
                         {this.props.gif.tags.map((tag, index) =>
-                            <span onClick={(e) => this.props.handleTagClick(e)} key={index} className="gif-tag" data-tag={tag}>#{tag} </span>
+                            <span onClick={(e) => this.props.handleTagClick(e)} key={index} className="gif-tag" data-tag={tag}>#{tag}</span>
                         )}
                     </Card.Text>
                 </Card.Body>

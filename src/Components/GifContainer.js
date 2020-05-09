@@ -34,7 +34,7 @@ class GifContainer extends React.Component {
         // clicking tag under gif sets search bar
         let str = event.target.textContent;
         // substr removes front # and ending space
-        this.setState({ inputValue: str.substr(1, str.length - 2) })
+        this.setState({ inputValue: str.substr(1, str.length - 1) })
     };
 
     handlePillClick = (event) => {
