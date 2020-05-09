@@ -8,8 +8,11 @@ import GifBadges from './GifBadges';
 
 class GifContainer extends React.Component {
 
-    // #TODO sort in random order on load
-    // #TODO add more columns
+    // #TODO REMOVE TODOS AND CREATE NEW ONES
+    // COUNT GIFS IN FOLDER TO MAKE SURE ALL APPEAR IN PROJECT
+    // CLEAN UP CODE AND OPTIMIZE
+    // LEAVE CLEAR CODE COMMENTS
+
     state = {
         inputValue: '',
         gifs: [],
@@ -73,7 +76,7 @@ class GifContainer extends React.Component {
         // state set to tags in order of highest usage
         let tagSorted = Object.keys(tagCounts);
         tagSorted = tagSorted.sort(function (a, b) { return tagCounts[b] - tagCounts[a] });
-        this.setState({ topTags: tagSorted.slice(0, 10) })
+        this.setState({ topTags: tagSorted.slice(0, 19) })
     }
 
 

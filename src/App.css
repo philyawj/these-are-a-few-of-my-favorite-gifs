@@ -2,15 +2,13 @@
   margin: 2rem 0 0 0;
 }
 
-.search-bar {
-  /* max-width: 200px; */
-  /* margin: 1rem 2rem; */
-  /* background-color: yellow; */
+.gif-tag:hover, .badge:hover {
+  cursor: pointer;
+  color: #007bff;
 }
 
-.gif-tag:hover {
-  cursor: pointer;
-  color: blueviolet;
+.badge {
+  transition:none !important;
 }
 
 .badge:hover {
@@ -20,6 +18,7 @@
 .badge {
   margin-right: .5rem;
   font-size: 100% !important;
+  margin-bottom: .5rem;
 }
 
 .gif-tag {

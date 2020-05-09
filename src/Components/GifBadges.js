@@ -6,13 +6,13 @@ class GifBadges extends React.Component {
     render() {
         return (
             <div>
-                <h4>
+                <h5>
                     {this.props.tags.map((tag, index) =>
-                        <Badge key={index} variant="primary" onClick={(e) => this.props.handleBadgeClick(e)}>
+                        <Badge key={index} variant="dark" onClick={(e) => this.props.handleBadgeClick(e)}>
                             #{tag}
                         </Badge>
                     )}
-                </h4>
+                </h5>
             </div>
         );
     }
