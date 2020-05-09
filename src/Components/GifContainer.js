@@ -20,6 +20,8 @@ class GifContainer extends React.Component {
 
         // set state on load to full list of gifs
         this.setState({ gifs: data.gifs });
+
+        this.topArrayTags();
     }
 
     gifFilterOnChange = (event) => {
@@ -36,6 +38,21 @@ class GifContainer extends React.Component {
     formPreventDefault(e) {
         e.preventDefault();
     }
+
+    topArrayTags() {
+        // get all tags into one array
+        let oneTagArray = [];
+        data.gifs.forEach(gif => oneTagArray = oneTagArray.concat(gif.tags))
+
+        // key: value counts
+        let tagCounts = {};
+        oneTagArray.forEach(function (x) { tagCounts[x] = (tagCounts[x] || 0) + 1; });
+
+        let tagSorted = Object.keys(tagCounts);
+        tagSorted.sort(function (a, b) { return tagCounts[b] - tagCounts[a] });
+        console.log(tagSorted.slice(0, 5));
+    }
+
 
     render() {
         const filteredGifs = this.state.gifs.filter(gif => {
