@@ -1,4 +1,6 @@
-# Simple React Gif search that filters from saved gifs with information in a json file.
+# Simple React Gif Search
+
+Filters from saved gifs with information in a JSON file
 
 ## Setup
 
