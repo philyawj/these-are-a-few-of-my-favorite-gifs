@@ -481,6 +481,21 @@
                 "awesome"
             ],
             "alt": "yes that's awesome"
+        },
+        {
+            "name": "drake",
+            "tags": [
+                "drake",
+                "started from the bottom"
+            ],
+            "alt": "drake started from the bottom"
+        },
+        {
+            "name": "clapping2",
+            "tags": [
+                "clapping"
+            ],
+            "alt": "bill clinton clapping"
         }
     ]
 }

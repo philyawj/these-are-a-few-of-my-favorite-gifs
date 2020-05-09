@@ -9,7 +9,6 @@ import GifBadges from './GifBadges';
 class GifContainer extends React.Component {
 
     // #TODO REMOVE TODOS AND CREATE NEW ONES
-    // COUNT GIFS IN FOLDER TO MAKE SURE ALL APPEAR IN PROJECT
     // CLEAN UP CODE AND OPTIMIZE
     // LEAVE CLEAR CODE COMMENTS
 
@@ -27,10 +26,13 @@ class GifContainer extends React.Component {
             array[j] = temp;
         }
         return array;
-    }
+    };
+
+    formPreventDefault(e) {
+        e.preventDefault();
+    };
 
     componentDidMount() {
-
         // join the tags array into comma seperated tag string to filter with toLowerCase() for filteredGifs
         this.shuffleArray(data.gifs).forEach(gif => {
             gif.tagString = gif.tags.join();
@@ -50,24 +52,22 @@ class GifContainer extends React.Component {
         // clicking tag under gif sets search bar
         let str = event.target.textContent;
         // substr removes front # and ending space
-        this.setState({ inputValue: str.substr(1, str.length - 1) })
+        this.setState({ inputValue: str.substr(1, str.length - 1) });
     };
 
     handleBadgeClick = (event) => {
         // clicking tag under gif sets search bar
         let str = event.target.textContent;
         // substr removes front # and ending space
-        this.setState({ inputValue: str.substr(1, str.length - 1) })
+        this.setState({ inputValue: str.substr(1, str.length - 1) });
     };
 
-    formPreventDefault(e) {
-        e.preventDefault();
-    }
+
 
     topArrayTags() {
         // get all tags into one array
         let oneTagArray = [];
-        data.gifs.forEach(gif => oneTagArray = oneTagArray.concat(gif.tags))
+        data.gifs.forEach(gif => oneTagArray = oneTagArray.concat(gif.tags));
 
         // key: value counts
         let tagCounts = {};
@@ -76,10 +76,8 @@ class GifContainer extends React.Component {
         // state set to tags in order of highest usage
         let tagSorted = Object.keys(tagCounts);
         tagSorted = tagSorted.sort(function (a, b) { return tagCounts[b] - tagCounts[a] });
-        this.setState({ topTags: tagSorted.slice(0, 19) })
-    }
-
-
+        this.setState({ topTags: tagSorted.slice(0, 19) });
+    };
 
     render() {
         const filteredGifs = this.state.gifs.filter(gif => {
