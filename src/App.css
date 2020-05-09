@@ -9,3 +9,8 @@
   margin: 1rem 2rem;
   background-color: yellow;
 }
+
+.gif-tag:hover {
+  cursor: pointer;
+  color: blueviolet;
+}
