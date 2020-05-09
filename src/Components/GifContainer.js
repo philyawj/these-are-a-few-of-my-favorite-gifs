@@ -27,16 +27,26 @@ class GifContainer extends React.Component {
         this.setState({ inputValue: event.target.value });
     };
 
+    handleTagClick = (event) => {
+        // console.log(event);
+        // #TODO this doesn't work yet
+        this.setState({ inputValue: "handleClickTesting" });
+    };
+
+    formPreventDefault(e) {
+        e.preventDefault();
+    }
+
     render() {
         const filteredGifs = this.state.gifs.filter(gif => {
-            console.log(gif.tags);
+            // console.log(gif.tags);
             return gif.tagString.toLowerCase().includes(this.state.inputValue.toLowerCase());
         });
         // console.log(filteredGifs);
 
         return (
             <div>
-                <Form className="search-bar">
+                <Form className="search-bar" onSubmit={this.formPreventDefault}>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Search for gif tags</Form.Label>
                         <Form.Control type="text" value={this.inputValue} onChange={this.gifFilterOnChange} />
@@ -45,7 +55,7 @@ class GifContainer extends React.Component {
 
                 <CardColumns>
                     {filteredGifs.map((gif, index) =>
-                        <GifCard gif={gif} index={index} key={index} />
+                        <GifCard gif={gif} index={index} key={index} handleTagClick={this.handleTagClick} />
                     )}
                 </CardColumns>
             </div>
