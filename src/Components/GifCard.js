@@ -3,11 +3,6 @@ import '../App.css';
 import Card from 'react-bootstrap/Card';
 
 class GifCard extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { test: true }
-    }
-
     render() {
         return (
             <Card key={this.props.index}>
